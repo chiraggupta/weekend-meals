@@ -1,6 +1,7 @@
 const { q, client } = require('./setupFaunaDB');
 
-const INDEX_NAME = 'indexes/all_orders';
+const INDEX_NAME = 'indexes/orders_sorted_by_when';
+// Data format: [[sortedDate, Ref(Collection(orders: {what, who, when}))]]
 
 exports.handler = async (event, context) => {
   try {
@@ -9,7 +10,7 @@ exports.handler = async (event, context) => {
     );
     const refs = refsResponse.data;
 
-    const dataFromRefsQuery = refs.map((ref) => q.Get(ref));
+    const dataFromRefsQuery = refs.map(([_, ref]) => q.Get(ref));
     const response = await client.query(dataFromRefsQuery);
 
     const data = response.map((order) => order.data);
