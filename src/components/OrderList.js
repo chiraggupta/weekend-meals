@@ -15,7 +15,9 @@ export default class OrderList extends React.Component {
 
   fetchOrders = async () => {
     const orders = await ordersApi.getAll();
-    this.setState({ orders });
+    if (orders && orders.length > 0) {
+      this.setState({ orders });
+    }
   };
 
   render() {
