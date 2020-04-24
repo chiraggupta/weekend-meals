@@ -9,10 +9,10 @@ exports.handler = async (event, context) => {
     );
     const refs = refsResponse.data;
 
-    const dataFromRefsQuery = refs.map(ref => q.Get(ref));
+    const dataFromRefsQuery = refs.map((ref) => q.Get(ref));
     const response = await client.query(dataFromRefsQuery);
 
-    const data = response.map(order => order.data);
+    const data = response.map((order) => order.data);
     return {
       statusCode: 200,
       body: JSON.stringify(data),
