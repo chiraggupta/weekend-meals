@@ -6,15 +6,13 @@ const create = async payload => {
     body: payload,
   });
   const data = await response.json();
-  console.log(data);
   return data;
 };
 
 const getAll = async () => {
-  console.log(ordersPath);
   const response = await fetch(ordersPath);
   const data = await response.json();
-  console.log(data);
+  return data;
 };
 
 export default {
