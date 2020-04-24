@@ -1,7 +1,7 @@
 import React from 'react';
 import uuid from 'uuid/v4';
 
-import ordersApi from '../utils/ordersApi';
+import ordersApi from '../services/ordersApi';
 import Order from './Order';
 
 export default class OrderList extends React.Component {
@@ -22,7 +22,7 @@ export default class OrderList extends React.Component {
     return (
       <div>
         <ul style={{ listStyleType: 'none', padding: 0, margin: '1em' }}>
-          {this.state.orders.map(order => (
+          {this.state.orders.map((order) => (
             <Order key={uuid()} entity={order} />
           ))}
         </ul>
