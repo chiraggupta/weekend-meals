@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import OrderInput from './components/OrderInput';
 import OrderList from './components/OrderList';
 
 function App() {
@@ -14,6 +15,9 @@ function App() {
           🍔🥡🍕🍜🥙🍛
         </span>
       </header>
+      <div className="App-order-input">
+        <OrderInput />
+      </div>
       <OrderList />
     </div>
   );
