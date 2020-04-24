@@ -23,7 +23,7 @@ export default class OrderList extends React.Component {
   render() {
     return (
       <div>
-        <ul style={{ listStyleType: 'none', padding: 0, margin: '1em' }}>
+        <ul style={{ listStyleType: 'none', padding: 0, margin: '0.8em' }}>
           {this.state.orders.map((order) => (
             <Order key={uuid()} entity={order} />
           ))}

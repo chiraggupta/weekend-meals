@@ -11,7 +11,7 @@ export default ({ entity }) => (
       padding: '0.5em',
     }}
   >
-    <div style={{ fontSize: '1.2em', marginBottom: '0.5em' }}>
+    <div style={{ fontSize: '1.2em', marginBottom: '0.4em' }}>
       {entity.what} by {entity.who}
     </div>
     <div
