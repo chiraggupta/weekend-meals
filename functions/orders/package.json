@@ -1,0 +1,13 @@
+{
+  "name": "orders",
+  "version": "0.1.0",
+  "description": "Orders API",
+  "main": "orders.js",
+  "scripts": {},
+  "keywords": [],
+  "author": "Chirag Gupta",
+  "license": "MIT",
+  "dependencies": {
+    "faunadb": "^2.6.1"
+  }
+}
