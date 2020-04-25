@@ -1,7 +1,10 @@
 import React from 'react';
-import './App.css';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
 import OrderInput from './components/OrderInput';
 import OrderList from './components/OrderList';
+
+import './App.css';
 
 function App() {
   return (
@@ -15,10 +18,13 @@ function App() {
           🍔🥡🍕🍜🥙🍛
         </span>
       </header>
-      <div className="App-order-input">
-        <OrderInput />
-      </div>
-      <OrderList />
+
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<OrderList />} />
+          <Route path="/add" element={<OrderInput />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }

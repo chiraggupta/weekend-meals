@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import uuid from 'uuid/v4';
 
 import ordersApi from '../services/ordersApi';
@@ -28,6 +29,23 @@ export default class OrderList extends React.Component {
             <Order key={uuid()} entity={order} />
           ))}
         </ul>
+        <Link
+          to="/add"
+          style={{
+            display: 'flex',
+            justifyContent: 'center',
+            textDecoration: 'none',
+          }}
+        >
+          <button
+            style={{
+              fontSize: '1.2em',
+              fontWeight: 'bold',
+            }}
+          >
+            Add
+          </button>
+        </Link>
       </div>
     );
   }
