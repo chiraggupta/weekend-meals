@@ -7,9 +7,10 @@ const getTodayAsISOString = () =>
 
 export default () => {
   const [state, setState] = React.useState({
-    what: '',
-    who: '',
-    when: getTodayAsISOString(),
+    category: '',
+    date: getTodayAsISOString(),
+    orderer: '',
+    restaurant: '',
   });
 
   const handleChange = (event) => {
@@ -19,7 +20,7 @@ export default () => {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    if (state.what.length === 0 || state.who.length === 0) {
+    if (state.restaurant.length === 0 || state.orderer.length === 0) {
       alert('Empty input');
       return;
     }
@@ -30,24 +31,35 @@ export default () => {
   return (
     <div>
       <form onSubmit={handleSubmit}>
-        <label htmlFor="what">What did you order?</label>
+        <label htmlFor="restaurant">Restaurant</label>
         <br />
         <input
-          id="what"
-          name="what"
+          id="restaurant"
+          name="restaurant"
           type="text"
-          value={state.what}
+          value={state.restaurant}
           onChange={handleChange}
           style={{ fontSize: '1.2em' }}
         />
         <br />
-        <label htmlFor="who">Who decided?</label>
+        <label htmlFor="category">Category</label>
         <br />
         <input
-          id="who"
-          name="who"
+          id="category"
+          name="category"
           type="text"
-          value={state.who}
+          value={state.category}
+          onChange={handleChange}
+          style={{ fontSize: '1.2em' }}
+        />
+        <br />
+        <label htmlFor="orderer">Who ordered?</label>
+        <br />
+        <input
+          id="orderer"
+          name="orderer"
+          type="text"
+          value={state.orderer}
           onChange={handleChange}
           style={{ fontSize: '1.2em' }}
         />

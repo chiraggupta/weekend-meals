@@ -12,7 +12,7 @@ export default ({ entity }) => (
     }}
   >
     <div style={{ fontSize: '1.2em', marginBottom: '0.4em' }}>
-      {entity.what} by {entity.who}
+      {entity.restaurant} - {entity.orderer}
     </div>
     <div
       style={{
@@ -20,7 +20,7 @@ export default ({ entity }) => (
         fontSize: '0.8em',
       }}
     >
-      {new Date(entity.when).toDateString()}
+      {new Date(entity.date).toDateString()}
     </div>
   </li>
 );

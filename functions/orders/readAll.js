@@ -1,7 +1,13 @@
 const { q, client } = require('./setupFaunaDB');
 
-const INDEX_NAME = 'indexes/orders_sorted_by_when';
-// Data format: [[sortedDate, Ref(Collection(orders: {what, who, when}))]]
+const INDEX_NAME = 'indexes/orders_sorted_by_date';
+/*
+Schema:
+Array([
+  sortedDate, 
+  Ref(Collection(orders: {category, date, orderer, restaurant}))
+])
+*/
 
 exports.handler = async (event, context) => {
   try {
