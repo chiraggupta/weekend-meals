@@ -37,7 +37,6 @@ export default () => {
       style={{
         display: 'flex',
         flexDirection: 'column',
-        fontSize: '1.2em',
         margin: '0.8em',
       }}
       onSubmit={handleSubmit}
@@ -52,7 +51,6 @@ export default () => {
         value={state.restaurant}
         onChange={handleChange}
         style={{ fontSize: '1.2em', marginBottom: '0.4em' }}
-        required
       />
 
       <label htmlFor="category">Category</label>
@@ -81,7 +79,18 @@ export default () => {
       <input
         type="submit"
         value="Add"
-        style={{ fontSize: '1em', fontWeight: 'bold' }}
+        style={{
+          height: '1.8em',
+          width: '20vw',
+          textAlign: 'center',
+          textDecoration: 'none',
+          fontSize: '1.1em',
+          color: '#ffffff',
+          backgroundColor: '#9555af',
+          border: 0,
+          borderRadius: '0.4em',
+          '-webkit-appearance': 'none',
+        }}
       />
     </form>
   );
