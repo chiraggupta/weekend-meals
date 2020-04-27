@@ -54,7 +54,7 @@ export default () => {
         autoCorrect="off"
         value={state.restaurant}
         onChange={handleChange}
-        style={{ fontSize: '1.2em', marginBottom: '0.4em' }}
+        style={{ fontSize: '1.2em', marginBottom: '1em' }}
       />
 
       <label htmlFor="category">Category</label>
@@ -65,7 +65,7 @@ export default () => {
         autoComplete="off"
         value={state.category}
         onChange={handleChange}
-        style={{ fontSize: '1.2em', marginBottom: '0.4em' }}
+        style={{ fontSize: '1.2em', marginBottom: '1em' }}
       />
 
       <label htmlFor="orderer">Who ordered?</label>
@@ -74,12 +74,12 @@ export default () => {
         name="orderer"
         value={state.orderer}
         onChange={handleChange}
-        style={{ fontSize: '1.1em', marginBottom: '0.4em' }}
+        style={{ fontSize: '1.1em', marginBottom: '1em' }}
       >
         <option value="Anya">Anya</option>
         <option value="Babina">Babina</option>
         <option value="Chirag">Chirag</option>
-        <option value="Summer">Summer</option>
+        <option value="Yoshi">Yoshi</option>
       </select>
 
       <input
