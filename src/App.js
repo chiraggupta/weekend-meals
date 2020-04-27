@@ -1,24 +1,14 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-import OrderInput from './components/OrderInput';
+import Header from './components/Header';
 import OrderList from './components/OrderList';
-
-import './App.css';
+import OrderInput from './components/OrderInput';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <span
-          className="App-header-text"
-          role="img"
-          aria-label="Take away options - burger, chinese takeaway box, slice of pizza, ramen, doner kebab in pita and curry with rice"
-        >
-          🍔🥡🍕🍜🥙🍛
-        </span>
-      </header>
-
+    <div>
+      <Header />
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<OrderList />} />
