@@ -12,7 +12,7 @@ export default () => {
   const [state, setState] = React.useState({
     category: '',
     date: getTodayAsISOString(),
-    orderer: '',
+    orderer: 'Anya',
     restaurant: '',
   });
 
@@ -23,8 +23,12 @@ export default () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    if (state.restaurant.length === 0 || state.orderer.length === 0) {
-      alert('Empty input');
+    if (
+      state.restaurant.length === 0 ||
+      state.category.length === 0 ||
+      state.orderer.length === 0
+    ) {
+      alert('Please input all fields');
       return;
     }
 
@@ -64,17 +68,19 @@ export default () => {
         style={{ fontSize: '1.2em', marginBottom: '0.4em' }}
       />
 
-      <label htmlFor="orderer">Excellent choice! Who decided?</label>
-      <input
+      <label htmlFor="orderer">Who ordered?</label>
+      <select
         id="orderer"
         name="orderer"
-        type="text"
-        autoComplete="off"
-        autoCorrect="off"
         value={state.orderer}
         onChange={handleChange}
-        style={{ fontSize: '1.2em', marginBottom: '0.4em' }}
-      />
+        style={{ fontSize: '1.1em', marginBottom: '0.4em' }}
+      >
+        <option value="Anya">Anya</option>
+        <option value="Babina">Babina</option>
+        <option value="Chirag">Chirag</option>
+        <option value="Summer">Summer</option>
+      </select>
 
       <input
         type="submit"
@@ -89,7 +95,7 @@ export default () => {
           backgroundColor: '#9555af',
           border: 0,
           borderRadius: '0.4em',
-          '-webkit-appearance': 'none',
+          WebkitAppearance: 'none',
         }}
       />
     </form>
