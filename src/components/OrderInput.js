@@ -78,8 +78,8 @@ export default () => {
       >
         <option value="Anya">Anya</option>
         <option value="Babina">Babina</option>
-        <option value="Chirag">Chirag</option>
         <option value="Yoshi">Yoshi</option>
+        <option value="Chirag">Chirag</option>
       </select>
 
       <input
