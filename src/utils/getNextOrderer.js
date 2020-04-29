@@ -1,4 +1,4 @@
-const ROTA = ['Babina', 'Yoshi', 'Anya', 'Chirag'];
+const ROTA = ['Anya', 'Babina', 'Yoshi', 'Chirag'];
 
 export default (lastOrderer) => {
   const lastOrdererIndex = ROTA.indexOf(lastOrderer);
