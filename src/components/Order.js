@@ -1,6 +1,26 @@
 import React from 'react';
 
-export default ({ entity }) => (
+const CATEGORY_ICONS = {
+  'fish & chips': '🐟',
+  american: '🇺🇸',
+  burgers: '🍔',
+  carribean: '🇯🇲',
+  chicken: '🍗',
+  chinese: '🥡',
+  indian: '🇮🇳',
+  japanese: '🍣',
+  kebab: '🥙',
+  korean: '🇰🇷',
+  mexican: '🌮',
+  pizza: '🍕',
+  thai: '🇹🇭',
+};
+
+const getCategoryIcon = (category) => {
+  return CATEGORY_ICONS[category.toLowerCase()] || '🍟';
+};
+
+const Order = ({ entity }) => (
   <li
     style={{
       textAlign: 'left',
@@ -11,16 +31,41 @@ export default ({ entity }) => (
       padding: '0.5em',
     }}
   >
-    <div style={{ fontSize: '1.2em', marginBottom: '0.4em' }}>
-      {entity.restaurant} - {entity.orderer}
-    </div>
     <div
       style={{
-        color: '#7C7A7A',
-        fontSize: '0.8em',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'space-around',
       }}
     >
-      {new Date(entity.date).toDateString()}
+      <div
+        style={{
+          display: 'flex',
+          flexDirection: 'row',
+          justifyContent: 'space-between',
+          alignItems: 'flex-start',
+          fontSize: '1.2em',
+          marginBottom: '0.4em',
+        }}
+      >
+        <div>{entity.restaurant}</div>
+        <div>{getCategoryIcon(entity.category)} </div>
+      </div>
+      <div
+        style={{
+          display: 'flex',
+          flexDirection: 'row',
+          justifyContent: 'space-between',
+          alignItems: 'flex-end',
+          color: '#7C7A7A',
+          fontSize: '1em',
+        }}
+      >
+        <div>{entity.orderer}</div>
+        <div>{new Date(entity.date).toDateString()}</div>
+      </div>
     </div>
   </li>
 );
+
+export default Order;
