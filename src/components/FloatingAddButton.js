@@ -8,15 +8,16 @@ export default ({ entity }) => (
       position: 'fixed',
       bottom: '1em',
       left: '30vw',
-      height: '1.6em',
       width: '40vw',
-      textAlign: 'center',
-      textDecoration: 'none',
-      paddingTop: '0.4em',
-      fontSize: '1.1em',
+      padding: '0.4em 0em',
+      fontSize: '1.2em',
       color: '#ffffff',
       backgroundColor: '#9555af',
-      borderRadius: '0.4em',
+      border: 0,
+      borderRadius: '1em',
+      textAlign: 'center',
+      textDecoration: 'none',
+      WebkitAppearance: 'none',
     }}
   >
     <span>Add Order</span>

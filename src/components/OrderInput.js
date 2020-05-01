@@ -45,7 +45,9 @@ const OrderInput = ({ nextOrderer }) => {
       }}
       onSubmit={handleSubmit}
     >
-      <label htmlFor="restaurant">Which restaurant?</label>
+      <label style={{ fontSize: '1.2em' }} htmlFor="restaurant">
+        Which restaurant?
+      </label>
       <input
         id="restaurant"
         name="restaurant"
@@ -54,10 +56,12 @@ const OrderInput = ({ nextOrderer }) => {
         autoCorrect="off"
         value={state.restaurant}
         onChange={handleChange}
-        style={{ fontSize: '1.2em', marginBottom: '1em' }}
+        style={{ fontSize: '1.2em', marginBottom: '0.8em' }}
       />
 
-      <label htmlFor="category">Category</label>
+      <label style={{ fontSize: '1.2em' }} htmlFor="category">
+        Category
+      </label>
       <input
         id="category"
         name="category"
@@ -65,16 +69,18 @@ const OrderInput = ({ nextOrderer }) => {
         autoComplete="off"
         value={state.category}
         onChange={handleChange}
-        style={{ fontSize: '1.2em', marginBottom: '1em' }}
+        style={{ fontSize: '1.2em', marginBottom: '0.8em' }}
       />
 
-      <label htmlFor="orderer">Who ordered?</label>
+      <label style={{ fontSize: '1.2em' }} htmlFor="orderer">
+        Who ordered?
+      </label>
       <select
         id="orderer"
         name="orderer"
         value={state.orderer}
         onChange={handleChange}
-        style={{ fontSize: '1.1em', marginBottom: '1em' }}
+        style={{ fontSize: '1.2em', marginBottom: '1.2em' }}
       >
         <option value="Anya">Anya</option>
         <option value="Babina">Babina</option>
@@ -84,17 +90,15 @@ const OrderInput = ({ nextOrderer }) => {
 
       <input
         type="submit"
-        value="Add"
+        value="Add Order"
         style={{
-          height: '1.8em',
-          width: '20vw',
-          textAlign: 'center',
-          textDecoration: 'none',
-          fontSize: '1.1em',
+          height: '2em',
+          width: '40vw',
+          fontSize: '1.2em',
           color: '#ffffff',
           backgroundColor: '#9555af',
           border: 0,
-          borderRadius: '0.4em',
+          borderRadius: '1em',
           WebkitAppearance: 'none',
         }}
       />

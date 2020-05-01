@@ -28,42 +28,34 @@ const Order = ({ entity }) => (
       borderBottomWidth: 1,
       borderBottomStyle: 'solid',
       borderBottomColor: '#dbdbdb',
-      padding: '0.5em',
+      padding: '0.4em',
     }}
   >
     <div
       style={{
         display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'space-around',
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'flex-start',
+        fontSize: '1.2em',
+        paddingBottom: '0.8em',
       }}
     >
-      <div
-        style={{
-          display: 'flex',
-          flexDirection: 'row',
-          justifyContent: 'space-between',
-          alignItems: 'flex-start',
-          fontSize: '1.2em',
-          marginBottom: '0.4em',
-        }}
-      >
-        <div>{entity.restaurant}</div>
-        <div>{getCategoryIcon(entity.category)} </div>
-      </div>
-      <div
-        style={{
-          display: 'flex',
-          flexDirection: 'row',
-          justifyContent: 'space-between',
-          alignItems: 'flex-end',
-          color: '#7C7A7A',
-          fontSize: '1em',
-        }}
-      >
-        <div>{entity.orderer}</div>
-        <div>{new Date(entity.date).toDateString()}</div>
-      </div>
+      <div>{entity.restaurant}</div>
+      <div>{getCategoryIcon(entity.category)} </div>
+    </div>
+    <div
+      style={{
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'flex-end',
+        color: '#7C7A7A',
+        fontSize: '1em',
+      }}
+    >
+      <div>{entity.orderer}</div>
+      <div>{new Date(entity.date).toDateString()}</div>
     </div>
   </li>
 );
