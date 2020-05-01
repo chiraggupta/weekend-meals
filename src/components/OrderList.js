@@ -1,36 +1,34 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import uuid from 'uuid/v4';
 
 import ordersApi from '../services/ordersApi';
 import Order from './Order';
 import FloatingAddButton from './FloatingAddButton';
 
-export default class OrderList extends React.Component {
-  state = {
-    orders: [],
-  };
+const OrderList = () => {
+  const [state, setState] = useState({ orders: [] });
 
-  componentDidMount() {
-    this.fetchOrders();
-  }
+  useEffect(() => {
+    const fetchOrders = async () => {
+      const orders = await ordersApi.getAll();
+      if (orders && orders.length > 0) {
+        setState({ orders });
+      }
+    };
 
-  fetchOrders = async () => {
-    const orders = await ordersApi.getAll();
-    if (orders && orders.length > 0) {
-      this.setState({ orders });
-    }
-  };
+    fetchOrders();
+  }, []);
 
-  render() {
-    return (
-      <div>
-        <ul style={{ listStyleType: 'none', padding: 0, margin: '0.8em' }}>
-          {this.state.orders.map((order) => (
-            <Order key={uuid()} entity={order} />
-          ))}
-        </ul>
-        <FloatingAddButton />
-      </div>
-    );
-  }
-}
+  return (
+    <div>
+      <ul style={{ listStyleType: 'none', padding: 0, margin: '0.8em' }}>
+        {state.orders.map((order) => (
+          <Order key={uuid()} entity={order} />
+        ))}
+      </ul>
+      <FloatingAddButton />
+    </div>
+  );
+};
+
+export default OrderList;
