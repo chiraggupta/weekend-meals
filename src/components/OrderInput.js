@@ -6,13 +6,13 @@ import ordersApi from '../services/ordersApi';
 const getTodayAsISOString = () =>
   new Date(Date.now()).toISOString().split('T')[0];
 
-export default () => {
+const OrderInput = ({ nextOrderer }) => {
   const navigate = useNavigate();
 
   const [state, setState] = React.useState({
     category: '',
     date: getTodayAsISOString(),
-    orderer: 'Anya',
+    orderer: nextOrderer,
     restaurant: '',
   });
 
@@ -101,3 +101,5 @@ export default () => {
     </form>
   );
 };
+
+export default OrderInput;
