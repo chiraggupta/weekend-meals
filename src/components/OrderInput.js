@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import ordersApi from '../services/ordersApi';
 
 import CategoryInput from './CategoryInput';
+import RestaurantInput from './RestaurantInput';
 
 const getTodayAsISOString = () =>
   new Date(Date.now()).toISOString().split('T')[0];
@@ -47,15 +48,7 @@ const OrderInput = ({ nextOrderer }) => {
       }}
       onSubmit={handleSubmit}
     >
-      <label style={{ fontSize: '1.2em' }} htmlFor="restaurant">
-        Which restaurant?
-      </label>
-      <input
-        id="restaurant"
-        name="restaurant"
-        type="text"
-        autoComplete="off"
-        autoCorrect="off"
+      <RestaurantInput
         value={state.restaurant}
         onChange={handleChange}
         style={{ fontSize: '1.2em', marginBottom: '0.8em' }}
