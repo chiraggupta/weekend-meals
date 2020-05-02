@@ -3,6 +3,8 @@ import { useNavigate } from 'react-router-dom';
 
 import ordersApi from '../services/ordersApi';
 
+import CategoryInput from './CategoryInput';
+
 const getTodayAsISOString = () =>
   new Date(Date.now()).toISOString().split('T')[0];
 
@@ -59,14 +61,7 @@ const OrderInput = ({ nextOrderer }) => {
         style={{ fontSize: '1.2em', marginBottom: '0.8em' }}
       />
 
-      <label style={{ fontSize: '1.2em' }} htmlFor="category">
-        Category
-      </label>
-      <input
-        id="category"
-        name="category"
-        type="text"
-        autoComplete="off"
+      <CategoryInput
         value={state.category}
         onChange={handleChange}
         style={{ fontSize: '1.2em', marginBottom: '0.8em' }}
