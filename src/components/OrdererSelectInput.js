@@ -8,7 +8,7 @@ const OrdererSelectInput = ({ value, onChange, style }) => {
         id="orderer"
         name="orderer"
         value={value}
-        onChange={onChange}
+        onChange={({ target: { value } }) => onChange(value)}
         style={{ fontSize: 'inherit' }}
       >
         <option value="Anya">Anya</option>

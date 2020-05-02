@@ -10,7 +10,7 @@ const RestaurantInput = ({ value, onChange, style }) => {
         type="text"
         autoComplete="off"
         value={value}
-        onChange={onChange}
+        onChange={({ target: { value } }) => onChange(value)}
         style={{ fontSize: 'inherit' }}
       />
     </div>

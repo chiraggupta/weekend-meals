@@ -20,8 +20,8 @@ const OrderInput = ({ nextOrderer }) => {
     restaurant: '',
   });
 
-  const handleChange = (event) => {
-    setState({ ...state, [event.target.name]: event.target.value });
+  const handleChange = (change) => {
+    setState({ ...state, ...change });
   };
 
   const handleSubmit = async (event) => {
@@ -51,19 +51,19 @@ const OrderInput = ({ nextOrderer }) => {
     >
       <RestaurantInput
         value={state.restaurant}
-        onChange={handleChange}
+        onChange={(value) => handleChange({ restaurant: value })}
         style={{ fontSize: '1.2em', marginBottom: '0.8em' }}
       />
 
       <CategoryInput
         value={state.category}
-        onChange={handleChange}
+        onChange={(value) => handleChange({ category: value })}
         style={{ fontSize: '1.2em', marginBottom: '0.8em' }}
       />
 
       <OrdererSelectInput
         value={state.orderer}
-        onChange={handleChange}
+        onChange={(value) => handleChange({ orderer: value })}
         style={{ fontSize: '1.2em', marginBottom: '1.2em' }}
       />
 
