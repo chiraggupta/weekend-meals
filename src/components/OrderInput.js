@@ -5,6 +5,7 @@ import ordersApi from '../services/ordersApi';
 
 import CategoryInput from './CategoryInput';
 import RestaurantInput from './RestaurantInput';
+import OrdererSelectInput from './OrdererSelectInput';
 
 const getTodayAsISOString = () =>
   new Date(Date.now()).toISOString().split('T')[0];
@@ -60,21 +61,11 @@ const OrderInput = ({ nextOrderer }) => {
         style={{ fontSize: '1.2em', marginBottom: '0.8em' }}
       />
 
-      <label style={{ fontSize: '1.2em' }} htmlFor="orderer">
-        Who ordered?
-      </label>
-      <select
-        id="orderer"
-        name="orderer"
+      <OrdererSelectInput
         value={state.orderer}
         onChange={handleChange}
         style={{ fontSize: '1.2em', marginBottom: '1.2em' }}
-      >
-        <option value="Anya">Anya</option>
-        <option value="Babina">Babina</option>
-        <option value="Yoshi">Yoshi</option>
-        <option value="Chirag">Chirag</option>
-      </select>
+      />
 
       <input
         type="submit"
