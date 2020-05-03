@@ -45,39 +45,39 @@ const OrderInput = ({ nextOrderer }) => {
       style={{
         display: 'flex',
         flexDirection: 'column',
-        margin: '0.8em',
+        margin: '0.8rem',
       }}
       onSubmit={handleSubmit}
     >
       <RestaurantInput
         value={state.restaurant}
         onChange={(value) => handleChange({ restaurant: value })}
-        style={{ fontSize: '1.2em', marginBottom: '0.8em' }}
+        style={{ fontSize: '1.2rem', marginBottom: '0.8rem' }}
       />
 
       <CategoryInput
         value={state.category}
         onChange={(value) => handleChange({ category: value })}
-        style={{ fontSize: '1.2em', marginBottom: '0.8em' }}
+        style={{ fontSize: '1.2rem', marginBottom: '0.8rem' }}
       />
 
       <OrdererSelectInput
         value={state.orderer}
         onChange={(value) => handleChange({ orderer: value })}
-        style={{ fontSize: '1.2em', marginBottom: '1.2em' }}
+        style={{ fontSize: '1.2rem', marginBottom: '1.2rem' }}
       />
 
       <input
         type="submit"
         value="Add Order"
         style={{
-          height: '2em',
+          height: '2rem',
           width: '40vw',
-          fontSize: '1.2em',
+          fontSize: '1.2rem',
           color: '#ffffff',
           backgroundColor: '#9555af',
           border: 0,
-          borderRadius: '1em',
+          borderRadius: '1rem',
           WebkitAppearance: 'none',
         }}
       />

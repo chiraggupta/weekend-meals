@@ -10,7 +10,7 @@ const Order = ({ entity }) => (
       borderBottomWidth: 1,
       borderBottomStyle: 'solid',
       borderBottomColor: '#dbdbdb',
-      padding: '0.4em',
+      padding: '0.4rem',
     }}
   >
     <div
@@ -19,8 +19,8 @@ const Order = ({ entity }) => (
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'flex-start',
-        fontSize: '1.2em',
-        paddingBottom: '0.8em',
+        fontSize: '1.2rem',
+        paddingBottom: '0.8rem',
       }}
     >
       <div>{entity.restaurant}</div>
@@ -33,7 +33,7 @@ const Order = ({ entity }) => (
         justifyContent: 'space-between',
         alignItems: 'flex-end',
         color: '#7C7A7A',
-        fontSize: '1em',
+        fontSize: '1rem',
       }}
     >
       <div>{entity.orderer}</div>

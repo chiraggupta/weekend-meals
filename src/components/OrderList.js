@@ -19,7 +19,7 @@ const OrderList = ({ orders, dispatch }) => {
 
   return (
     <div>
-      <ul style={{ listStyleType: 'none', padding: 0, margin: '0.8em' }}>
+      <ul style={{ listStyleType: 'none', padding: 0, margin: '0.8rem' }}>
         {orders.map((order) => (
           <Order key={uuid()} entity={order} />
         ))}

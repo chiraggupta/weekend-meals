@@ -13,7 +13,7 @@ export default () => (
     }}
   >
     <span
-      style={{ fontSize: '1.6em' }}
+      style={{ fontSize: '1.6rem' }}
       role="img"
       aria-label="Take away options - burger, chinese takeaway box, slice of pizza, ramen, doner kebab in pita and curry with rice"
     >
