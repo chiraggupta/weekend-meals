@@ -32,7 +32,7 @@ const Order = ({ entity }) => (
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'flex-end',
-        color: '#7C7A7A',
+        color: '#727472',
         fontSize: '1rem',
       }}
     >
