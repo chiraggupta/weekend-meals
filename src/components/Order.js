@@ -1,24 +1,6 @@
 import React from 'react';
 
-const CATEGORY_ICONS = {
-  'fish & chips': '🐟',
-  american: '🇺🇸',
-  burgers: '🍔',
-  carribean: '🇯🇲',
-  chicken: '🍗',
-  chinese: '🥡',
-  indian: '🇮🇳',
-  japanese: '🍣',
-  kebab: '🥙',
-  korean: '🇰🇷',
-  mexican: '🌮',
-  pizza: '🍕',
-  thai: '🇹🇭',
-};
-
-const getCategoryIcon = (category) => {
-  return CATEGORY_ICONS[category.toLowerCase()] || '🍟';
-};
+import { getCategoryIcon } from '../utils/categories';
 
 const Order = ({ entity }) => (
   <li
