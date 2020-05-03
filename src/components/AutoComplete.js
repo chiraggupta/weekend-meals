@@ -5,7 +5,7 @@ const menuStyle = {
   position: 'absolute',
   left: '0.8rem',
   right: '0.8rem',
-  maxHeight: '20vh',
+  maxHeight: '12rem',
   overflowY: 'auto',
   listStyle: 'none',
   margin: 0,

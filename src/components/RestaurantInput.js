@@ -1,17 +1,14 @@
 import React from 'react';
 
-const RestaurantInput = ({ value, onChange, style }) => {
+import AutoComplete from './AutoComplete';
+
+const RestaurantInput = ({ value, onChange, restaurants, style }) => {
   return (
-    <div style={{ ...style, display: 'flex', flexDirection: 'column' }}>
-      <label htmlFor="restaurant">Which restaurant?</label>
-      <input
-        id="restaurant"
-        name="restaurant"
-        type="text"
-        autoComplete="off"
-        value={value}
-        onChange={({ target: { value } }) => onChange(value)}
-        style={{ fontSize: 'inherit' }}
+    <div style={{ ...style }}>
+      <AutoComplete
+        label="Restaurant"
+        suggestions={restaurants}
+        onChange={onChange}
       />
     </div>
   );

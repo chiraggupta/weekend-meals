@@ -21,7 +21,12 @@ function App() {
           />
           <Route
             path="/add"
-            element={<OrderInput nextOrderer={state.nextOrderer} />}
+            element={
+              <OrderInput
+                nextOrderer={state.nextOrderer}
+                restaurants={state.restaurants}
+              />
+            }
           />
         </Routes>
       </BrowserRouter>

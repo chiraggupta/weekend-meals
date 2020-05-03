@@ -10,7 +10,7 @@ import OrdererSelectInput from './OrdererSelectInput';
 const getTodayAsISOString = () =>
   new Date(Date.now()).toISOString().split('T')[0];
 
-const OrderInput = ({ nextOrderer }) => {
+const OrderInput = ({ nextOrderer, restaurants }) => {
   const navigate = useNavigate();
 
   const [state, setState] = React.useState({
@@ -52,6 +52,7 @@ const OrderInput = ({ nextOrderer }) => {
       <RestaurantInput
         value={state.restaurant}
         onChange={(value) => handleChange({ restaurant: value })}
+        restaurants={restaurants}
         style={{ fontSize: '1.2rem', marginBottom: '0.8rem' }}
       />
 
