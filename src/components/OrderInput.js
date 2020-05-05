@@ -2,13 +2,12 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import ordersApi from '../services/ordersApi';
+import getTodayAsISOString from '../utils/getTodayAsISOString';
 
 import CategoryInput from './CategoryInput';
 import RestaurantInput from './RestaurantInput';
 import OrdererSelectInput from './OrdererSelectInput';
-
-const getTodayAsISOString = () =>
-  new Date(Date.now()).toISOString().split('T')[0];
+import DateInput from './DateInput';
 
 const OrderInput = ({ nextOrderer, restaurants }) => {
   const navigate = useNavigate();
@@ -65,6 +64,12 @@ const OrderInput = ({ nextOrderer, restaurants }) => {
       <OrdererSelectInput
         value={state.orderer}
         onChange={(value) => handleChange({ orderer: value })}
+        style={{ fontSize: '1.2rem', marginBottom: '0.8rem' }}
+      />
+
+      <DateInput
+        value={state.date}
+        onChange={(value) => handleChange({ date: value })}
         style={{ fontSize: '1.2rem', marginBottom: '1.2rem' }}
       />
 
