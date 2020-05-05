@@ -9,6 +9,7 @@ const RestaurantInput = ({ value, onChange, restaurants, style }) => {
         label="Restaurant"
         suggestions={restaurants}
         onChange={onChange}
+        value={value}
       />
     </div>
   );

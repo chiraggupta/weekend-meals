@@ -9,7 +9,7 @@ import RestaurantInput from './RestaurantInput';
 import OrdererSelectInput from './OrdererSelectInput';
 import DateInput from './DateInput';
 
-const OrderInput = ({ nextOrderer, restaurants }) => {
+const OrderInput = ({ nextOrderer, restaurantsWithCategories }) => {
   const navigate = useNavigate();
 
   const [state, setState] = React.useState({
@@ -20,7 +20,15 @@ const OrderInput = ({ nextOrderer, restaurants }) => {
   });
 
   const handleChange = (change) => {
-    setState({ ...state, ...change });
+    const allUpdates = { ...change };
+    if (
+      allUpdates.restaurant &&
+      restaurantsWithCategories[allUpdates.restaurant]
+    ) {
+      allUpdates.category = restaurantsWithCategories[allUpdates.restaurant];
+    }
+
+    setState({ ...state, ...allUpdates });
   };
 
   const handleSubmit = async (event) => {
@@ -51,7 +59,7 @@ const OrderInput = ({ nextOrderer, restaurants }) => {
       <RestaurantInput
         value={state.restaurant}
         onChange={(value) => handleChange({ restaurant: value })}
-        restaurants={restaurants}
+        restaurants={Object.keys(restaurantsWithCategories).sort()}
         style={{ fontSize: '1.2rem', marginBottom: '0.8rem' }}
       />
 

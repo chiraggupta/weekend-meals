@@ -22,7 +22,7 @@ const inputStyle = {
   width: '100%',
 };
 
-const AutoComplete = ({ label, suggestions, onChange }) => {
+const AutoComplete = ({ label, suggestions, value, onChange }) => {
   const [inputItems, setInputItems] = useState(suggestions);
   const {
     isOpen,
@@ -49,6 +49,7 @@ const AutoComplete = ({ label, suggestions, onChange }) => {
       <div {...getComboboxProps()}>
         <input
           {...getInputProps({
+            value,
             autoComplete: 'off',
             autoCorrect: 'off',
             style: inputStyle,

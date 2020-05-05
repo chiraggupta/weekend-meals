@@ -10,6 +10,7 @@ const CategoryInput = ({ value, onChange, style }) => {
         label="Category"
         suggestions={getCategories()}
         onChange={onChange}
+        value={value}
       />
     </div>
   );
