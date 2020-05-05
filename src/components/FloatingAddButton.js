@@ -6,7 +6,7 @@ export default ({ entity }) => (
     to="/add"
     style={{
       position: 'fixed',
-      bottom: '1rem',
+      bottom: '1.2rem',
       left: '30vw',
       width: '40vw',
       paddingTop: '0.2em',
