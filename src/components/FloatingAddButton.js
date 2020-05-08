@@ -1,26 +1,21 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import Button from './Button';
+
 export default ({ entity }) => (
   <Link
     to="/add"
     style={{
       position: 'fixed',
-      bottom: '1.2rem',
-      left: '30vw',
-      width: '40vw',
-      paddingTop: '0.2em',
-      height: '1.8rem',
-      fontSize: '1.2rem',
-      color: '#ffffff',
-      backgroundColor: '#9555af',
-      border: 0,
-      borderRadius: '1rem',
-      textAlign: 'center',
-      textDecoration: 'none',
-      WebkitAppearance: 'none',
+      left: 0,
+      right: 0,
+      bottom: 0,
+      padding: '0rem 0.8rem 0.8rem',
+      backgroundColor: '#ffffff',
+      boxShadow: '0 1rem 2rem 1rem #fff',
     }}
   >
-    <span>Add Order</span>
+    <Button style={{ width: '100%' }}>Add Order</Button>
   </Link>
 );

@@ -8,6 +8,7 @@ import CategoryInput from './CategoryInput';
 import RestaurantInput from './RestaurantInput';
 import OrdererSelectInput from './OrdererSelectInput';
 import DateInput from './DateInput';
+import Button from './Button';
 
 const OrderInput = ({ nextOrderer, restaurantsWithCategories }) => {
   const navigate = useNavigate();
@@ -81,20 +82,7 @@ const OrderInput = ({ nextOrderer, restaurantsWithCategories }) => {
         style={{ fontSize: '1.2rem', marginBottom: '1.2rem' }}
       />
 
-      <input
-        type="submit"
-        value="Add Order"
-        style={{
-          height: '2rem',
-          width: '40vw',
-          fontSize: '1.2rem',
-          color: '#ffffff',
-          backgroundColor: '#9555af',
-          border: 0,
-          borderRadius: '1rem',
-          WebkitAppearance: 'none',
-        }}
-      />
+      <Button>Add Order</Button>
     </form>
   );
 };
