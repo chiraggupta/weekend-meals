@@ -1,18 +1,18 @@
 const categoryIcons = {
-  American: '🇺🇸',
+  American: '🌭🇺🇸',
   Burgers: '🍔',
   Carribean: '🇯🇲',
   Chicken: '🍗',
-  Chinese: '🥡',
-  'Fish & Chips': '🐟',
-  Indian: '🇮🇳',
-  Italian: '🇮🇹',
-  Japanese: '🍣',
-  Kebab: '🥙',
-  Korean: '🇰🇷',
+  Chinese: '🥡🥠',
+  'Fish & Chips': '🐟🍟',
+  Indian: '🍛🇮🇳',
+  Italian: '🍝🇮🇹',
+  Japanese: '🍣🍜',
+  Kebab: '🥙🌯',
+  Korean: '🍲🇰🇷',
   Mexican: '🌮',
   Pizza: '🍕',
-  Thai: '🇹🇭',
+  Thai: '🍚🇹🇭',
 };
 
 export const getCategories = () => Object.keys(categoryIcons);

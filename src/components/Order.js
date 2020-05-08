@@ -24,7 +24,9 @@ const Order = ({ entity }) => (
       }}
     >
       <div>{entity.restaurant}</div>
-      <div>{getCategoryIcon(entity.category)} </div>
+      <div role="img" aria-label={entity.category}>
+        {getCategoryIcon(entity.category)}
+      </div>
     </div>
     <div
       style={{
