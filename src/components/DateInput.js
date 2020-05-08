@@ -13,7 +13,7 @@ const DateInput = ({ value, onChange, style }) => {
         max={getTodayAsISOString()}
         value={value}
         onChange={({ target: { value } }) => onChange(value)}
-        style={{ fontSize: 'inherit' }}
+        style={{ fontSize: 'inherit', WebkitAppearance: 'none' }}
       />
     </div>
   );
