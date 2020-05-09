@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import ordersApi from '../services/ordersApi';
@@ -9,44 +9,55 @@ import RestaurantInput from './RestaurantInput';
 import OrdererSelectInput from './OrdererSelectInput';
 import DateInput from './DateInput';
 import Button from './Button';
+import Message from './Message';
 
 const OrderInput = ({ nextOrderer, restaurantsWithCategories }) => {
   const navigate = useNavigate();
 
-  const [state, setState] = React.useState({
-    category: '',
-    date: getTodayAsISOString(),
-    orderer: nextOrderer,
-    restaurant: '',
+  const [state, setState] = useState({
+    orderDetails: {
+      category: '',
+      date: getTodayAsISOString(),
+      orderer: nextOrderer,
+      restaurant: '',
+    },
+    showError: false,
   });
 
+  const isValidOrder = (order) => {
+    return Object.values(order).every((value) => value.trim().length > 0);
+  };
+
   const handleChange = (change) => {
-    const allUpdates = { ...change };
-    if (
-      allUpdates.restaurant &&
-      restaurantsWithCategories[allUpdates.restaurant]
-    ) {
-      allUpdates.category = restaurantsWithCategories[allUpdates.restaurant];
+    const updates = { ...change };
+    if (updates.restaurant && restaurantsWithCategories[updates.restaurant]) {
+      updates.category = restaurantsWithCategories[updates.restaurant];
     }
 
-    setState({ ...state, ...allUpdates });
+    const { orderDetails, showError } = state;
+
+    const updatedOrderDetails = { ...orderDetails, ...updates };
+    setState({
+      orderDetails: updatedOrderDetails,
+      showError: isValidOrder(updatedOrderDetails) ? false : showError,
+    });
   };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    if (
-      state.restaurant.length === 0 ||
-      state.category.length === 0 ||
-      state.orderer.length === 0
-    ) {
-      alert('Please input all fields');
+    const { orderDetails } = state;
+
+    if (!isValidOrder(orderDetails)) {
+      setState({ orderDetails, showError: true });
       return;
     }
 
-    await ordersApi.create(state);
+    await ordersApi.create(orderDetails);
     navigate('/');
   };
+
+  const { showError, orderDetails } = state;
 
   return (
     <form
@@ -57,27 +68,29 @@ const OrderInput = ({ nextOrderer, restaurantsWithCategories }) => {
       }}
       onSubmit={handleSubmit}
     >
+      {showError && <Message>Please input all fields</Message>}
+
       <RestaurantInput
-        value={state.restaurant}
+        value={orderDetails.restaurant}
         onChange={(value) => handleChange({ restaurant: value })}
         restaurants={Object.keys(restaurantsWithCategories).sort()}
         style={{ fontSize: '1.2rem', marginBottom: '0.8rem' }}
       />
 
       <CategoryInput
-        value={state.category}
+        value={orderDetails.category}
         onChange={(value) => handleChange({ category: value })}
         style={{ fontSize: '1.2rem', marginBottom: '0.8rem' }}
       />
 
       <OrdererSelectInput
-        value={state.orderer}
+        value={orderDetails.orderer}
         onChange={(value) => handleChange({ orderer: value })}
         style={{ fontSize: '1.2rem', marginBottom: '0.8rem' }}
       />
 
       <DateInput
-        value={state.date}
+        value={orderDetails.date}
         onChange={(value) => handleChange({ date: value })}
         style={{ fontSize: '1.2rem', marginBottom: '1.2rem' }}
       />
