@@ -68,7 +68,7 @@ const OrderInput = ({ nextOrderer, restaurantsWithCategories }) => {
       }}
       onSubmit={handleSubmit}
     >
-      {showError && <Message>Please input all fields</Message>}
+      {showError && <Message>Please fill in all fields</Message>}
 
       <RestaurantInput
         value={orderDetails.restaurant}

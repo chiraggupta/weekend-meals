@@ -7,9 +7,9 @@ const Order = ({ entity }) => (
     style={{
       textAlign: 'left',
       listStylePosition: 'inside',
-      borderBottomWidth: 1,
+      borderBottomWidth: '0.01rem',
       borderBottomStyle: 'solid',
-      borderBottomColor: '#ffb2a7',
+      borderBottomColor: '#ffcdf9',
       padding: '0.4rem',
     }}
   >
