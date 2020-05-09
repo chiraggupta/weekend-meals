@@ -9,7 +9,7 @@ const Order = ({ entity }) => (
       listStylePosition: 'inside',
       borderBottomWidth: 1,
       borderBottomStyle: 'solid',
-      borderBottomColor: '#dbdbdb',
+      borderBottomColor: '#ffb2a7',
       padding: '0.4rem',
     }}
   >

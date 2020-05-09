@@ -64,7 +64,7 @@ const AutoComplete = ({ label, suggestions, value, onChange }) => {
                 fontSize: 'inherit',
                 padding: '0.4rem',
                 backgroundColor:
-                  highlightedIndex === index ? '#bde4ff' : 'white',
+                  highlightedIndex === index ? '#ffb2a7' : 'white',
               }}
               key={`${item}${index}`}
               {...getItemProps({ item, index })}

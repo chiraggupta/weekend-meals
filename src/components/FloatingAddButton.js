@@ -12,7 +12,7 @@ export default ({ entity }) => (
       right: 0,
       bottom: 0,
       padding: '0rem 0.8rem 0.8rem',
-      backgroundColor: '#ffffff',
+      backgroundColor: '#fff',
       boxShadow: '0 1rem 2rem 1rem #fff',
     }}
   >

@@ -7,8 +7,8 @@ export default ({ style, children }) => (
       alignItems: 'center',
       padding: '0.4em',
       borderRadius: '0.2rem',
-      backgroundColor: '#bde4ff',
-      fontSize: '1em',
+      backgroundColor: '#ffb2a7',
+      fontSize: '1rem',
       ...style,
     }}
   >

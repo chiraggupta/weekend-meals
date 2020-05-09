@@ -3,21 +3,26 @@ import React from 'react';
 export default () => (
   <header
     style={{
-      backgroundColor: '#282c34',
-      minHeight: '10vh',
+      backgroundColor: '#790c5a',
+      minHeight: '5rem',
       display: 'flex',
-      flexDirection: 'column',
+      fontSize: '1.4rem',
+      fontWeight: 'bold',
+      flexDirection: 'row',
       alignItems: 'center',
-      justifyContent: 'center',
+      justifyContent: 'space-evenly',
       color: 'white',
     }}
   >
     <span
-      style={{ fontSize: '1.6rem' }}
       role="img"
-      aria-label="Take away options - burger, chinese takeaway box, slice of pizza, ramen, doner kebab in pita and curry with rice"
+      aria-label="Slice of pizza, chinese takeout box and a pita bread with kebab"
     >
-      🍔🥡🍕🍜🥙🍛
+      🍕🥡🥙
+    </span>
+    Takeaways
+    <span role="img" aria-label="Burger, bowl of ramen and a taco">
+      🍔🍜🌮
     </span>
   </header>
 );
