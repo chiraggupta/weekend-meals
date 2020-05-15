@@ -37,8 +37,8 @@ const AutoComplete = ({ label, suggestions, value, onChange }) => {
     onInputValueChange: ({ inputValue }) => {
       onChange(inputValue);
       setInputItems(
-        suggestions.filter((item) =>
-          item.toLowerCase().startsWith(inputValue.toLowerCase()),
+        suggestions.filter(
+          (item) => item.toLowerCase().indexOf(inputValue.toLowerCase()) !== -1,
         ),
       );
     },
