@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { getCategoryIcon } from '../utils/categories';
-import { getRatingIcon } from '../utils/ratings';
+import { getRatingIcon, getRatingLabel } from '../utils/ratings';
 
 const Order = ({ entity }) => (
   <li
@@ -29,7 +29,7 @@ const Order = ({ entity }) => (
         <span role="img" aria-label={entity.category}>
           {getCategoryIcon(entity.category)}
         </span>
-        <span role="img" aria-label={entity.rating}>
+        <span role="img" aria-label={getRatingLabel(entity.rating)}>
           {getRatingIcon(entity.rating)}
         </span>
       </div>
