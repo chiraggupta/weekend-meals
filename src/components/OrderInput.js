@@ -8,8 +8,11 @@ import CategoryInput from './CategoryInput';
 import RestaurantInput from './RestaurantInput';
 import OrdererSelectInput from './OrdererSelectInput';
 import DateInput from './DateInput';
+import RatingInput from './RatingInput';
 import Button from './Button';
 import Message from './Message';
+
+const inputStyle = { fontSize: '1.2rem', marginBottom: '1.2rem' };
 
 const OrderInput = ({ nextOrderer, restaurantsWithCategories }) => {
   const navigate = useNavigate();
@@ -19,6 +22,7 @@ const OrderInput = ({ nextOrderer, restaurantsWithCategories }) => {
       category: '',
       date: getTodayAsISOString(),
       orderer: nextOrderer,
+      rating: '',
       restaurant: '',
     },
     showError: false,
@@ -74,25 +78,31 @@ const OrderInput = ({ nextOrderer, restaurantsWithCategories }) => {
         value={orderDetails.restaurant}
         onChange={(value) => handleChange({ restaurant: value })}
         restaurants={Object.keys(restaurantsWithCategories).sort()}
-        style={{ fontSize: '1.2rem', marginBottom: '0.8rem' }}
+        style={inputStyle}
       />
 
       <CategoryInput
         value={orderDetails.category}
         onChange={(value) => handleChange({ category: value })}
-        style={{ fontSize: '1.2rem', marginBottom: '0.8rem' }}
+        style={inputStyle}
       />
 
       <OrdererSelectInput
         value={orderDetails.orderer}
         onChange={(value) => handleChange({ orderer: value })}
-        style={{ fontSize: '1.2rem', marginBottom: '0.8rem' }}
+        style={inputStyle}
       />
 
       <DateInput
         value={orderDetails.date}
         onChange={(value) => handleChange({ date: value })}
-        style={{ fontSize: '1.2rem', marginBottom: '1.2rem' }}
+        style={inputStyle}
+      />
+
+      <RatingInput
+        value={orderDetails.rating}
+        onChange={(value) => handleChange({ rating: value })}
+        style={inputStyle}
       />
 
       <Button>Add Order</Button>
