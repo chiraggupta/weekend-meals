@@ -24,7 +24,7 @@ function App() {
             element={
               <OrderInput
                 nextOrderer={state.nextOrderer}
-                restaurantsWithCategories={state.restaurantsWithCategories}
+                restaurantsWithDetails={state.restaurantsWithDetails}
               />
             }
           />

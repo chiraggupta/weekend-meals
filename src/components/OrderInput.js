@@ -14,7 +14,7 @@ import Message from './Message';
 
 const inputStyle = { fontSize: '1.2rem', marginBottom: '1.2rem' };
 
-const OrderInput = ({ nextOrderer, restaurantsWithCategories }) => {
+const OrderInput = ({ nextOrderer, restaurantsWithDetails }) => {
   const navigate = useNavigate();
 
   const [state, setState] = useState({
@@ -34,8 +34,8 @@ const OrderInput = ({ nextOrderer, restaurantsWithCategories }) => {
 
   const handleChange = (change) => {
     const updates = { ...change };
-    if (updates.restaurant && restaurantsWithCategories[updates.restaurant]) {
-      updates.category = restaurantsWithCategories[updates.restaurant];
+    if (updates.restaurant && restaurantsWithDetails[updates.restaurant]) {
+      updates.category = restaurantsWithDetails[updates.restaurant];
     }
 
     const { orderDetails, showError } = state;
@@ -77,7 +77,7 @@ const OrderInput = ({ nextOrderer, restaurantsWithCategories }) => {
       <RestaurantInput
         value={orderDetails.restaurant}
         onChange={(value) => handleChange({ restaurant: value })}
-        restaurants={Object.keys(restaurantsWithCategories).sort()}
+        restaurants={Object.keys(restaurantsWithDetails).sort()}
         style={inputStyle}
       />
 

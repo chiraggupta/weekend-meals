@@ -1,6 +1,6 @@
 import getNextOrderer from '../utils/getNextOrderer';
 
-const getUniqueRestaurantsWithCategories = (orders) => {
+const getUniqueRestaurantsWithDetails = (orders) => {
   return orders.reduce(
     (accumulator, { restaurant, category }) => ({
       ...accumulator,
@@ -11,9 +11,9 @@ const getUniqueRestaurantsWithCategories = (orders) => {
 };
 
 export const initialState = {
-  orders: [],
-  restaurantsWithCategories: {},
-  nextOrderer: getNextOrderer(),
+  orders: [], // Array<{category, date, orderer, rating, restaurant}>, Sorted New to Old
+  restaurantsWithDetails: {}, // Object<{ restaurant: category }
+  nextOrderer: getNextOrderer(), // String
 };
 
 const OrdersReducer = (state, action) => {
@@ -21,7 +21,7 @@ const OrdersReducer = (state, action) => {
     const orders = [...action.orders];
     return {
       orders,
-      restaurantsWithCategories: getUniqueRestaurantsWithCategories(orders),
+      restaurantsWithDetails: getUniqueRestaurantsWithDetails(orders),
       nextOrderer: getNextOrderer(orders),
     };
   }

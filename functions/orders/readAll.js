@@ -5,7 +5,7 @@ const INDEX_NAME = 'indexes/orders_sorted_by_date';
 Schema:
 Array([
   sortedDate, 
-  Ref(Collection(orders: {category, date, orderer, restaurant}))
+  Ref(Collection(orders: {category, date, orderer, rating, restaurant}))
 ])
 */
 
