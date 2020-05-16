@@ -33,9 +33,14 @@ const OrderInput = ({ nextOrderer, restaurantsWithDetails }) => {
   };
 
   const handleChange = (change) => {
+    console.log(change);
+
     const updates = { ...change };
-    if (updates.restaurant && restaurantsWithDetails[updates.restaurant]) {
-      updates.category = restaurantsWithDetails[updates.restaurant];
+    const selectedRestaurantCategory =
+      restaurantsWithDetails[updates.restaurant] &&
+      restaurantsWithDetails[updates.restaurant].category;
+    if (selectedRestaurantCategory) {
+      updates.category = selectedRestaurantCategory;
     }
 
     const { orderDetails, showError } = state;
@@ -77,7 +82,7 @@ const OrderInput = ({ nextOrderer, restaurantsWithDetails }) => {
       <RestaurantInput
         value={orderDetails.restaurant}
         onChange={(value) => handleChange({ restaurant: value })}
-        restaurants={Object.keys(restaurantsWithDetails).sort()}
+        restaurants={restaurantsWithDetails}
         style={inputStyle}
       />
 
