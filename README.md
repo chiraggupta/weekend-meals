@@ -1,7 +1,4 @@
 # Weekend Meals
 
-A react app to plan weekend meals.
-
-## Development
-
-See [CONTRIBUTING.md](CONTRIBUTING.md)
+A web-app to track our regular weekend takeaways.
+Built using React, Netlify Functions and FaunaDB.
