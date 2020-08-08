@@ -10,7 +10,8 @@
     "build:netlify": "npm run build && npm run build:functions"
   },
   "dependencies": {
-    "downshift": "^5.4.7",
+    "downshift": "^6.0.3",
+    "history": "^5.0.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-router": "^6.0.0-beta.0",
