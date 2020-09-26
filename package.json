@@ -20,9 +20,9 @@
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^5.11.4",
-    "@testing-library/react": "^10.4.9",
-    "@testing-library/user-event": "^12.1.4",
-    "netlify-cli": "^2.62.0",
+    "@testing-library/react": "^11.0.4",
+    "@testing-library/user-event": "^12.1.6",
+    "netlify-cli": "^2.64.1",
     "react-scripts": "^3.4.3"
   },
   "eslintConfig": {
