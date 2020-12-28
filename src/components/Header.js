@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default () => (
+const Header = () => (
   <header
     style={{
       backgroundColor: '#790c5a',
@@ -26,3 +26,5 @@ export default () => (
     </span>
   </header>
 );
+
+export default Header;

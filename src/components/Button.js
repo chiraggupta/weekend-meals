@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default ({ children }) => (
+const Button = ({ children }) => (
   <button
     style={{
       padding: '0.8rem 1.8rem',
@@ -19,3 +19,5 @@ export default ({ children }) => (
     {children}
   </button>
 );
+
+export default Button;

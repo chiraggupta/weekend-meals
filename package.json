@@ -10,20 +10,20 @@
     "build:netlify": "npm run build && npm run build:functions"
   },
   "dependencies": {
-    "downshift": "^6.0.6",
+    "downshift": "^6.0.10",
     "history": "^5.0.0",
-    "react": "^16.14.0",
-    "react-dom": "^16.14.0",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
     "react-router": "^6.0.0-beta.0",
     "react-router-dom": "^6.0.0-beta.0",
-    "uuid": "^8.3.1"
+    "uuid": "^8.3.2"
   },
   "devDependencies": {
-    "@testing-library/jest-dom": "^5.11.4",
-    "@testing-library/react": "^11.1.0",
-    "@testing-library/user-event": "^12.1.8",
-    "netlify-cli": "^2.65.6",
-    "react-scripts": "^3.4.3"
+    "@testing-library/jest-dom": "^5.11.6",
+    "@testing-library/react": "^11.2.2",
+    "@testing-library/user-event": "^12.6.0",
+    "netlify-cli": "^2.69.11",
+    "react-scripts": "4.0.1"
   },
   "eslintConfig": {
     "extends": "react-app"

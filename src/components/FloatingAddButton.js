@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 import Button from './Button';
 
-export default ({ entity }) => (
+const FloatingAddButton = ({ entity }) => (
   <Link
     to="/add"
     style={{
@@ -19,3 +19,5 @@ export default ({ entity }) => (
     <Button style={{ width: '100%' }}>Add Order</Button>
   </Link>
 );
+
+export default FloatingAddButton;

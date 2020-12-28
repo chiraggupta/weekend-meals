@@ -21,5 +21,9 @@
 npm-debug.log*
 .npmrc
 
+# cache
+.eslintcache
+.cache
+
 # Local Netlify folder
 .netlify

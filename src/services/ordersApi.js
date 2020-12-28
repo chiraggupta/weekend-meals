@@ -19,7 +19,5 @@ const getAll = async () => {
   return data;
 };
 
-export default {
-  create,
-  getAll,
-};
+const ordersApi = { create, getAll };
+export default ordersApi;

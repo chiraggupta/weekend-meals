@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default ({ style, children }) => (
+const Message = ({ style, children }) => (
   <div
     style={{
       display: 'flex',
@@ -18,3 +18,5 @@ export default ({ style, children }) => (
     {children}
   </div>
 );
+
+export default Message;

@@ -1,6 +1,6 @@
 const ROTA = ['Anya', 'Babina', 'Yoshi', 'Chirag'];
 
-export default (orders) => {
+const getNextOrderer = (orders) => {
   if (!orders || orders.length === 0) {
     return ROTA[0];
   }
@@ -10,3 +10,5 @@ export default (orders) => {
   const nextOrdererIndex = (lastOrdererIndex + 1) % ROTA.length;
   return ROTA[nextOrdererIndex];
 };
+
+export default getNextOrderer;
