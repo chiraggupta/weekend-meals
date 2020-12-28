@@ -9,7 +9,7 @@ Array([
 ])
 */
 
-exports.handler = async (event, context) => {
+exports.handler = async function readAll(event, context) {
   try {
     const refsResponse = await client.query(
       q.Paginate(q.Match(q.Ref(INDEX_NAME))),

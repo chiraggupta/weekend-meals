@@ -14,7 +14,7 @@ import Message from './Message';
 
 const inputStyle = { fontSize: '1.2rem', marginBottom: '1.2rem' };
 
-const OrderInput = ({ nextOrderer, restaurantsWithDetails }) => {
+export default function OrderInput({ nextOrderer, restaurantsWithDetails }) {
   const navigate = useNavigate();
 
   const [state, setState] = useState({
@@ -28,11 +28,11 @@ const OrderInput = ({ nextOrderer, restaurantsWithDetails }) => {
     showError: false,
   });
 
-  const isValidOrder = (order) => {
+  function isValidOrder(order) {
     return Object.values(order).every((value) => value.trim().length > 0);
-  };
+  }
 
-  const handleChange = (change) => {
+  function handleChange(change) {
     console.log(change);
 
     const updates = { ...change };
@@ -50,9 +50,9 @@ const OrderInput = ({ nextOrderer, restaurantsWithDetails }) => {
       orderDetails: updatedOrderDetails,
       showError: isValidOrder(updatedOrderDetails) ? false : showError,
     });
-  };
+  }
 
-  const handleSubmit = async (event) => {
+  async function handleSubmit(event) {
     event.preventDefault();
 
     const { orderDetails } = state;
@@ -64,7 +64,7 @@ const OrderInput = ({ nextOrderer, restaurantsWithDetails }) => {
 
     await ordersApi.create(orderDetails);
     navigate('/');
-  };
+  }
 
   const { showError, orderDetails } = state;
 
@@ -113,6 +113,4 @@ const OrderInput = ({ nextOrderer, restaurantsWithDetails }) => {
       <Button>Add Order</Button>
     </form>
   );
-};
-
-export default OrderInput;
+}

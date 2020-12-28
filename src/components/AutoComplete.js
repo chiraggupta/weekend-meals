@@ -22,15 +22,13 @@ const inputStyle = {
   width: '100%',
 };
 
-const defaultSuggestionRenderer = (suggestion) => suggestion;
-
-const AutoComplete = ({
+function AutoComplete({
   label,
   suggestions,
   value,
   onChange,
-  renderSuggestion = defaultSuggestionRenderer,
-}) => {
+  renderSuggestion = (suggestion) => suggestion,
+}) {
   const [inputItems, setInputItems] = useState(suggestions);
   const {
     isOpen,
@@ -83,6 +81,6 @@ const AutoComplete = ({
       </ul>
     </div>
   );
-};
+}
 
 export default AutoComplete;

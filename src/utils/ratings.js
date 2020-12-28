@@ -18,11 +18,14 @@ const ratingIcons = {
   },
 };
 
-export const getRatingIcon = (rating) =>
-  (ratingIcons[rating] && ratingIcons[rating].icon) || '';
+export function getRatingIcon(rating) {
+  return (ratingIcons[rating] && ratingIcons[rating].icon) || '';
+}
 
-export const getRatingInputLabel = (rating) =>
-  (ratingIcons[rating] && ratingIcons[rating].inputLabel) || '';
+export function getRatingInputLabel(rating) {
+  return (ratingIcons[rating] && ratingIcons[rating].inputLabel) || '';
+}
 
-export const getRatingLabel = (rating) =>
-  (ratingIcons[rating] && ratingIcons[rating].label) || '';
+export function getRatingLabel(rating) {
+  return (ratingIcons[rating] && ratingIcons[rating].label) || '';
+}

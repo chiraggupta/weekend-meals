@@ -15,8 +15,10 @@ const categoryIcons = {
   Thai: '🇹🇭',
 };
 
-export const getCategories = () => Object.keys(categoryIcons);
+export function getCategories() {
+  return Object.keys(categoryIcons);
+}
 
-export const getCategoryIcon = (category) => {
+export function getCategoryIcon(category) {
   return categoryIcons[category] || '🍟';
-};
+}

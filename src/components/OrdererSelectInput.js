@@ -1,6 +1,6 @@
 import React from 'react';
 
-const OrdererSelectInput = ({ value, onChange, style }) => {
+export default function OrdererSelectInput({ value, onChange, style }) {
   return (
     <div style={{ ...style, display: 'flex', flexDirection: 'column' }}>
       <label htmlFor="orderer">Who ordered?</label>
@@ -18,6 +18,4 @@ const OrdererSelectInput = ({ value, onChange, style }) => {
       </select>
     </div>
   );
-};
-
-export default OrdererSelectInput;
+}

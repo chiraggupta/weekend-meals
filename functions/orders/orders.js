@@ -1,4 +1,4 @@
-exports.handler = async (event, context) => {
+exports.handler = async function orders(event, context) {
   console.log(`Invoked with HTTP ${event.httpMethod}`);
   switch (event.httpMethod) {
     case 'GET':

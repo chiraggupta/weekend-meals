@@ -3,7 +3,7 @@ import React from 'react';
 import AutoComplete from './AutoComplete';
 import { getCategories } from '../utils/categories';
 
-const CategoryInput = ({ value, onChange, style }) => {
+export default function CategoryInput({ value, onChange, style }) {
   return (
     <div style={{ ...style }}>
       <AutoComplete
@@ -14,6 +14,4 @@ const CategoryInput = ({ value, onChange, style }) => {
       />
     </div>
   );
-};
-
-export default CategoryInput;
+}

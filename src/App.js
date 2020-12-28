@@ -7,7 +7,7 @@ import OrderInput from './components/OrderInput';
 
 import OrdersReducer, { initialState } from './reducers/OrdersReducer';
 
-function App() {
+export default function App() {
   const [state, dispatch] = useReducer(OrdersReducer, initialState);
 
   return (
@@ -33,5 +33,3 @@ function App() {
     </div>
   );
 }
-
-export default App;

@@ -5,14 +5,14 @@ import ordersApi from '../services/ordersApi';
 import Order from './Order';
 import FloatingAddButton from './FloatingAddButton';
 
-const OrderList = ({ orders, dispatch }) => {
+export default function OrderList({ orders, dispatch }) {
   useEffect(() => {
-    const fetchOrders = async () => {
+    async function fetchOrders() {
       const orders = await ordersApi.getAll();
       if (orders && orders.length > 0) {
         dispatch({ type: 'UPDATE', orders });
       }
-    };
+    }
 
     fetchOrders();
   }, [dispatch]);
@@ -27,6 +27,4 @@ const OrderList = ({ orders, dispatch }) => {
       <FloatingAddButton />
     </div>
   );
-};
-
-export default OrderList;
+}

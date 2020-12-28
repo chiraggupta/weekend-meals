@@ -2,7 +2,7 @@ import React from 'react';
 
 import getTodayAsISOString from '../utils/getTodayAsISOString';
 
-const DateInput = ({ value, onChange, style }) => {
+export default function DateInput({ value, onChange, style }) {
   return (
     <div style={{ ...style, display: 'flex', flexDirection: 'column' }}>
       <label htmlFor="date">When?</label>
@@ -17,6 +17,4 @@ const DateInput = ({ value, onChange, style }) => {
       />
     </div>
   );
-};
-
-export default DateInput;
+}
