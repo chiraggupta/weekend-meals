@@ -11,7 +11,7 @@ export default function Header() {
         fontWeight: 'bold',
         flexDirection: 'row',
         alignItems: 'center',
-        justifyContent: 'space-evenly',
+        justifyContent: 'center',
         color: 'white',
       }}
     >
@@ -21,7 +21,7 @@ export default function Header() {
       >
         🍕🥡🥙
       </span>
-      Takeaways
+      <span style={{ marginLeft: '1rem', marginRight: '1rem' }}>Takeaways</span>
       <span role="img" aria-label="Burger, bowl of ramen and a taco">
         🍔🍜🌮
       </span>

@@ -13,23 +13,25 @@ export default function App() {
   return (
     <div>
       <Header />
-      <BrowserRouter>
-        <Routes>
-          <Route
-            path="/"
-            element={<OrderList orders={state.orders} dispatch={dispatch} />}
-          />
-          <Route
-            path="/add"
-            element={
-              <OrderInput
-                nextOrderer={state.nextOrderer}
-                restaurantsWithDetails={state.restaurantsWithDetails}
-              />
-            }
-          />
-        </Routes>
-      </BrowserRouter>
+      <div style={{ maxWidth: '50rem', margin: '0 auto' }}>
+        <BrowserRouter>
+          <Routes>
+            <Route
+              path="/"
+              element={<OrderList orders={state.orders} dispatch={dispatch} />}
+            />
+            <Route
+              path="/add"
+              element={
+                <OrderInput
+                  nextOrderer={state.nextOrderer}
+                  restaurantsWithDetails={state.restaurantsWithDetails}
+                />
+              }
+            />
+          </Routes>
+        </BrowserRouter>
+      </div>
     </div>
   );
 }

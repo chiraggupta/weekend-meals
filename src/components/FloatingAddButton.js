@@ -9,15 +9,16 @@ export default function FloatingAddButton({ entity }) {
       to="/add"
       style={{
         position: 'fixed',
-        left: 0,
-        right: 0,
         bottom: 0,
+        left: '50%',
+        transform: 'translate(-50%, 0)',
         padding: '0rem 0.8rem 0.8rem',
         backgroundColor: '#fff',
         boxShadow: '0 1rem 2rem 1rem #fff',
+        textDecoration: 'none',
       }}
     >
-      <Button style={{ width: '100%' }}>Add Order</Button>
+      <Button style={{ margin: '0 auto' }}>Add Order</Button>
     </Link>
   );
 }

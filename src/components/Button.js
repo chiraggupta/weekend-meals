@@ -5,7 +5,8 @@ export default function Button({ children }) {
     <button
       style={{
         padding: '0.8rem 1.8rem',
-        width: '100%',
+        margin: '0 auto',
+        width: '12rem',
         border: 'none',
         borderRadius: '0.2rem',
         textDecoration: 'none',
