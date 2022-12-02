@@ -35,7 +35,6 @@ function AutoComplete({
     getLabelProps,
     getMenuProps,
     getInputProps,
-    getComboboxProps,
     highlightedIndex,
     getItemProps,
   } = useCombobox({
@@ -52,7 +51,6 @@ function AutoComplete({
   return (
     <div>
       <label {...getLabelProps()}>{label}</label>
-      <div {...getComboboxProps()}>
         <input
           {...getInputProps({
             value,
@@ -61,7 +59,6 @@ function AutoComplete({
             style: inputStyle,
           })}
         />
-      </div>
       <ul {...getMenuProps()} style={menuStyle}>
         {isOpen &&
           inputItems.map((item, index) => (
