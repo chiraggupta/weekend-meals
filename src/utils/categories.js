@@ -5,6 +5,7 @@ const categoryIcons = {
   Chicken: '🍗',
   Chinese: '🥡',
   'Fish & Chips': '🐟🍟',
+  Greek: '🥙🍟',
   Indian: '🇮🇳',
   Italian: '🇮🇹',
   Japanese: '🍣',
