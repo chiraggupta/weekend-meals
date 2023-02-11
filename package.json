@@ -22,7 +22,7 @@
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^11.2.6",
     "@testing-library/user-event": "^13.1.1",
-    "netlify-cli": "^3.13.10",
+    "netlify-cli": "^12.12.0",
     "react-scripts": "5.0.0"
   },
   "eslintConfig": {
