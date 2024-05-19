@@ -16,7 +16,6 @@ export default function OrdererSelectInput({ value, onChange, style }) {
         <option value="Yoshi">Yoshi</option>
         <option value="Chirag">Chirag</option>
         <option value="Takeaway Explorer 🎲">Takeaway Explorer 🎲</option>
-        <option value="Celebration 🥳">Celebration 🥳</option>
       </select>
     </div>
   );
