@@ -1,4 +1,4 @@
-const ROTA = ['Anya', 'Babina', 'Yoshi', 'Chirag'];
+const ROTA = ['Anya', 'Babina', 'Yoshi', 'Chirag', 'Takeaway Explorer 🎲'];
 
 export default function getNextOrderer(orders) {
   if (!orders || orders.length === 0) {
