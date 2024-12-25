@@ -4,7 +4,6 @@
   "private": true,
   "scripts": {
     "start": "react-scripts start",
-    "dev": "netlify dev",
     "build": "react-scripts build",
     "build:functions": "cd functions/orders && npm i",
     "build:netlify": "npm run build && npm run build:functions"
@@ -21,7 +20,6 @@
   "devDependencies": {
     "@testing-library/react": "^16.1.0",
     "@testing-library/user-event": "^14.5.2",
-    "netlify-cli": "^17.38.1",
     "react-scripts": "^5.0.1"
   },
   "eslintConfig": {
