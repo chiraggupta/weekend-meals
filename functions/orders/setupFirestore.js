@@ -10,6 +10,11 @@ try {
   console.log('Decoded preview:', decoded.slice(0, 30)); // should look like JSON
   const credentials = JSON.parse(decoded);
   console.log('✅ JSON parsed:', credentials.project_id);
+
+  initializeApp({
+    credential: cert(credentials)
+  });
+
 } catch (err) {
   console.error('❌ Error decoding or parsing Firestore credentials:', err.message);
 }
@@ -18,8 +23,5 @@ try {
 //   Buffer.from(process.env.FIRESTORE_SA_BASE64, 'base64').toString()
 // );
 
-initializeApp({
-  credential: cert(credentials)
-});
 
 exports.db = getFirestore();
