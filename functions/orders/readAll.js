@@ -1,25 +1,10 @@
-const { q, client } = require('./setupFaunaDB');
-
-const INDEX_NAME = 'indexes/orders_sorted_by_date';
-/*
-Schema:
-Array([
-  sortedDate, 
-  Ref(Collection(orders: {category, date, orderer, rating, restaurant}))
-])
-*/
+const { db } = require('./setupFirestore');
 
 exports.handler = async function readAll(event, context) {
   try {
-    const refsResponse = await client.query(
-      q.Paginate(q.Match(q.Ref(INDEX_NAME))),
-    );
-    const refs = refsResponse.data;
-
-    const dataFromRefsQuery = refs.map(([_, ref]) => q.Get(ref));
-    const response = await client.query(dataFromRefsQuery);
-
-    const data = response.map((order) => order.data);
+    const collection = db.collection('orders').orderBy('date', 'desc');
+    const ordersResponse = await collection.get();
+    const data = ordersResponse.map((order) => order.data());
     return {
       statusCode: 200,
       body: JSON.stringify(data),
