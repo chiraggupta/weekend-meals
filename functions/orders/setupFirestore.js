@@ -12,11 +12,7 @@ try {
   });
 
 } catch (error) {
-  console.error('Error (setupFirestore):', error);
-  return {
-    statusCode: 500,
-    body: 'Error setting up Firestore',
-  };
+  console.error('Error (setupFirestore): ', error.message);
 }
 
 exports.db = getFirestore();
