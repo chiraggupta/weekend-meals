@@ -1,11 +1,11 @@
-const { q, client } = require('./setupFaunaDB');
-
-const CLASS_NAME = 'classes/orders';
+const { db } = require('./setupFirestore');
 
 exports.handler = async function create(event, context) {
   try {
     const data = JSON.parse(event.body);
-    const response = await client.query(q.Create(q.Ref(CLASS_NAME), { data }));
+
+    const newOrder = db.collection('orders').doc();
+    const response = await newOrder.set({ data });
     return {
       statusCode: 200,
       body: JSON.stringify(response),
