@@ -8,7 +8,6 @@
   "author": "Chirag Gupta",
   "license": "MIT",
   "dependencies": {
-    "faunadb": "^4.8.2",
     "firebase-admin": "^13.4.0"
   }
 }
