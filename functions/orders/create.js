@@ -5,7 +5,7 @@ exports.handler = async function create(event, context) {
     const data = JSON.parse(event.body);
 
     const newOrder = db.collection('orders').doc();
-    const response = await newOrder.set({ data });
+    const response = await newOrder.set(data);
     return {
       statusCode: 200,
       body: JSON.stringify(response),
